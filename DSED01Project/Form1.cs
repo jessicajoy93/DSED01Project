@@ -11,12 +11,8 @@ using System.Windows.Forms;
 namespace DSED01Project
 {
     /// <summary>
-    /// todo: generate a random number
-    /// todo: create  count down code under fire button to count down from 6 to 1
-    /// todo: create a button click to count down the fireaway
-    /// todo: create  fire away code where you can fire away for two times only. Use a boolean to say when you cannot fire away any more
-    /// todo: if the count down equals the rnd AND fireaway equals true - you win
-    /// todo: if the count down equals the rnd AND fireaway equals false - you lose
+    /// 
+    /// 
     /// </summary>
     public partial class Form1 : Form
     {
@@ -46,16 +42,21 @@ namespace DSED01Project
             btnRestart.Visible = false;
             panelIntro.Visible = true;
             panelGame.Visible = false;
-            myFishClass.counter;
-            if (myFishClass != null) myFishClass.bait;
+            myFishClass.Bait();
+            myFishClass.BaitIsTrue();
+            btnBait.Visible = true;
+            myFishClass.Count();
+            myFishClass.Cast();
+
         }
 
         private void btnPlayGame_Click(object sender, EventArgs e)
         {
             PlayGameVisible();
 
-            lblBait.Text = myFishClass.baitNum().ToString();
-            lblCount.Text = myFishClass.count().ToString();
+            lblCount.Text = myFishClass.Count().ToString();
+            lblCast.Text = myFishClass.Cast().ToString();
+            lblBait.Text = myFishClass.Bait().ToString();
         }
 
         private void PlayGameVisible()
@@ -65,17 +66,35 @@ namespace DSED01Project
             btnRestart.Visible = true;
         }
 
+        // todo: create a button click code where you can change bait two times only. Use a boolean to say when you cannot change bait any more
         private void btnBait_Click(object sender, EventArgs e)
         {
-            //if (myFishClass.baitNum() > 0)
-            //{
+            btnBait.Visible = myFishClass.bait();
+            // debugging data to be deleted later
             lblBait.Text = myFishClass.baitNum().ToString();
-            lblCount.Text = myFishClass.count().ToString();
+        }
+
+        // create a button click to count down the casts left
+        private void btnCast_Click(object sender, EventArgs e)
+        {
+            //todo: if the count down equals the rnd AND fireaway equals true - you win
+            //if (myFishClass.countDown())
+            //{
+
             //}
+            //else if ()
+            //{
+
+            //}
+            //todo: if the count down equals the rnd AND fireaway equals false - you lose
             //else
             //{
-            //lblBait.Visible = false;
+
             //}
+
+            // debugging data to be deleted later
+            lblCast.Text = myFishClass.castNum().ToString();
+            lblCount.Text = myFishClass.countDown().ToString();
 
         }
     }

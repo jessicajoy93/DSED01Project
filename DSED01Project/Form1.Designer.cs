@@ -42,9 +42,11 @@
             this.picBoot = new System.Windows.Forms.PictureBox();
             this.picFish = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblBait = new System.Windows.Forms.Label();
+            this.lblCast = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
+            this.lblBait = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelIntro.SuspendLayout();
             this.panelGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoot)).BeginInit();
@@ -154,6 +156,7 @@
             this.btnCast.TabIndex = 1;
             this.btnCast.Text = "Cast your line";
             this.btnCast.UseVisualStyleBackColor = true;
+            this.btnCast.Click += new System.EventHandler(this.btnCast_Click);
             // 
             // btnBait
             // 
@@ -190,24 +193,24 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(22, 519);
+            this.label3.Location = new System.Drawing.Point(66, 518);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 23);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Bait";
+            this.label3.Text = "Cast";
             // 
-            // lblBait
+            // lblCast
             // 
-            this.lblBait.BackColor = System.Drawing.Color.Yellow;
-            this.lblBait.Location = new System.Drawing.Point(22, 544);
-            this.lblBait.Name = "lblBait";
-            this.lblBait.Size = new System.Drawing.Size(41, 23);
-            this.lblBait.TabIndex = 5;
+            this.lblCast.BackColor = System.Drawing.Color.Yellow;
+            this.lblCast.Location = new System.Drawing.Point(66, 543);
+            this.lblCast.Name = "lblCast";
+            this.lblCast.Size = new System.Drawing.Size(41, 23);
+            this.lblCast.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(69, 519);
+            this.label4.Location = new System.Drawing.Point(113, 518);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 23);
             this.label4.TabIndex = 4;
@@ -216,20 +219,39 @@
             // lblCount
             // 
             this.lblCount.BackColor = System.Drawing.Color.Yellow;
-            this.lblCount.Location = new System.Drawing.Point(69, 544);
+            this.lblCount.Location = new System.Drawing.Point(113, 543);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(41, 23);
             this.lblCount.TabIndex = 5;
+            // 
+            // lblBait
+            // 
+            this.lblBait.BackColor = System.Drawing.Color.Yellow;
+            this.lblBait.Location = new System.Drawing.Point(19, 543);
+            this.lblBait.Name = "lblBait";
+            this.lblBait.Size = new System.Drawing.Size(41, 23);
+            this.lblBait.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Yellow;
+            this.label6.Location = new System.Drawing.Point(19, 518);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 23);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Bait";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 583);
+            this.Controls.Add(this.lblBait);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblBait);
+            this.Controls.Add(this.lblCast);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.btnPlayAgain);
@@ -258,12 +280,14 @@
         private System.Windows.Forms.PictureBox picBoot;
         private System.Windows.Forms.PictureBox picFish;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Label lblBait;
+        public System.Windows.Forms.Label lblCast;
         private System.Windows.Forms.Button btnFish;
         private System.Windows.Forms.Button btnCast;
         private System.Windows.Forms.Button btnBait;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lblCount;
+        public System.Windows.Forms.Label lblBait;
+        private System.Windows.Forms.Label label6;
     }
 }
 

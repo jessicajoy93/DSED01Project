@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DSED01Project
 {
@@ -11,38 +12,61 @@ namespace DSED01Project
     {
         //public TYPE Type { get; set; }
         private static Random random = new Random(DateTime.Now.Millisecond);
+        private int newCast;
+        private int count;
+        private bool IsBait = true;
+        private int newBait;
+        //private int countdown = counter;
 
-        public static int baitRandom = random.Next(1, 7);
-        public int bait = baitRandom;
-        public static int counter = 7;
-        public int countdown = counter;
-
-        public int count()
+        public int Count()
         {
-            counter--;
-            return counter;
+            return count = 6;
         }
 
+        // generate a random number
+        public int Cast()
+        {
+            return newCast = random.Next(1, 7);
+        }
+
+        public bool BaitIsTrue()
+        {
+            IsBait = true;
+            return IsBait;
+        }
+        public int Bait()
+        {
+            return newBait = 2;
+        }
+
+        // create countdown to count down from 6 to 1
+        public int countDown()
+        {
+            count--;
+            return count;
+        }
+
+
+        public int castNum()
+        {
+            newCast--;
+            return newCast;
+        }
 
         public int baitNum()
         {
-            bait = bait - 1;
-            return bait;
+            newBait--;
+            if (newBait == 1)
+            {
+                IsBait = false;
+            }
+            return newBait;
         }
 
-        //public string bait()
-        //{
-        //    baitNum = baitNum - 1;
-        //    return baitNum.ToString();
-        //}
-
-        //public string count()
-        //{
-        //    counter--;
-        //    return counter.ToString();
-        //}
-
-        public void playGame() { }
+        public bool bait()
+        {
+            return IsBait;
+        }
 
     }
 }
