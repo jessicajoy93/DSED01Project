@@ -23,6 +23,12 @@ namespace DSED01Project
             InitializeComponent();
         }
 
+        private void Debug()
+        {
+            this.Text = myFishClass.baitNum().ToString() + " Bait " + myFishClass.castNum().ToString() + "  Cast " + myFishClass.countDown().ToString() + "  Countdown " + myFishClass.bait();
+            //this.Text = dice.ToString() + " Counter " + counter.ToString() + "  Firing " + IsFiringThisTurn + "  Protect jacket " + ProtectJacket;
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are You Sure To Exit Programme ?", "Exit", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -47,16 +53,17 @@ namespace DSED01Project
             btnBait.Visible = true;
             myFishClass.Count();
             myFishClass.Cast();
-
         }
 
         private void btnPlayGame_Click(object sender, EventArgs e)
         {
             PlayGameVisible();
 
-            lblCount.Text = myFishClass.Count().ToString();
-            lblCast.Text = myFishClass.Cast().ToString();
-            lblBait.Text = myFishClass.Bait().ToString();
+            myFishClass.Count();
+            myFishClass.Cast();
+            myFishClass.Bait();
+            myFishClass.BaitIsTrue();
+            Debug();
         }
 
         private void PlayGameVisible()
@@ -70,32 +77,24 @@ namespace DSED01Project
         private void btnBait_Click(object sender, EventArgs e)
         {
             btnBait.Visible = myFishClass.bait();
-            // debugging data to be deleted later
-            lblBait.Text = myFishClass.baitNum().ToString();
+            //Debug();
+
         }
 
         // create a button click to count down the casts left
         private void btnCast_Click(object sender, EventArgs e)
         {
-            //todo: if the count down equals the rnd AND fireaway equals true - you win
-            //if (myFishClass.countDown())
-            //{
-
-            //}
-            //else if ()
-            //{
-
-            //}
+            //todo: if the countDown equals the castNum AND castNum equals true - you win
+            if (myFishClass.countDown() == myFishClass.castNum())//&& myFishClass.bait() == true
+            {
+                MessageBox.Show("You win!");
+            }
             //todo: if the count down equals the rnd AND fireaway equals false - you lose
-            //else
-            //{
-
-            //}
-
-            // debugging data to be deleted later
-            lblCast.Text = myFishClass.castNum().ToString();
-            lblCount.Text = myFishClass.countDown().ToString();
-
+            else if (myFishClass.countDown() == myFishClass.castNum() && myFishClass.bait() == false)
+            {
+                MessageBox.Show("You lose!");
+            }
+            Debug();
         }
     }
 }

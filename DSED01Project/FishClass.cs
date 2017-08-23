@@ -16,11 +16,10 @@ namespace DSED01Project
         private int count;
         private bool IsBait = true;
         private int newBait;
-        //private int countdown = counter;
 
         public int Count()
         {
-            return count = 6;
+            return count = 7;
         }
 
         // generate a random number
@@ -36,7 +35,7 @@ namespace DSED01Project
         }
         public int Bait()
         {
-            return newBait = 2;
+            return newBait = 3;
         }
 
         // create countdown to count down from 6 to 1
@@ -49,7 +48,7 @@ namespace DSED01Project
 
         public int castNum()
         {
-            newCast--;
+            //newCast--;
             return newCast;
         }
 
