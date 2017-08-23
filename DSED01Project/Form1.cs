@@ -53,6 +53,8 @@ namespace DSED01Project
             btnBait.Visible = true;
             myFishClass.Count();
             myFishClass.Cast();
+            picFish.Visible = false;
+            picBoot.Visible = false;
         }
 
         private void btnPlayGame_Click(object sender, EventArgs e)
@@ -71,6 +73,8 @@ namespace DSED01Project
             panelIntro.Visible = false;
             panelGame.Visible = true;
             btnRestart.Visible = true;
+            btnBait.Visible = true;
+            btnCast.Visible = true;
         }
 
         // todo: create a button click code where you can change bait two times only. Use a boolean to say when you cannot change bait any more
@@ -88,18 +92,28 @@ namespace DSED01Project
             //todo: if the countDown equals the castNum AND castNum equals true - you win
             if (myFishClass.debugCountDown() == myFishClass.castNum() && myFishClass.bait() == true)
             {
+                picFish.Visible = true;
                 MessageBox.Show("You win!");
+                GameControlsHidden();
             }
             //todo: if the count down equals the rnd AND fireaway equals false - you lose
             else if (myFishClass.debugCountDown() == myFishClass.castNum() && myFishClass.bait() == false)
             {
+                picBoot.Visible = true;
                 MessageBox.Show("You lose!");
+                GameControlsHidden();
             }
             else
             {
                 myFishClass.countDown();
             }
             Debug();
+        }
+
+        private void GameControlsHidden()
+        {
+            btnBait.Visible = false;
+            btnCast.Visible = false;
         }
     }
 }

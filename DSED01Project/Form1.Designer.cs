@@ -32,7 +32,6 @@
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.btnRestart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelIntro = new System.Windows.Forms.Panel();
             this.btnPlayGame = new System.Windows.Forms.Button();
             this.panelGame = new System.Windows.Forms.Panel();
@@ -40,10 +39,12 @@
             this.btnBait = new System.Windows.Forms.Button();
             this.picBoot = new System.Windows.Forms.PictureBox();
             this.picFish = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelIntro.SuspendLayout();
             this.panelGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFish)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -79,30 +80,18 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 85F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(731, 78);
+            this.label1.Size = new System.Drawing.Size(731, 230);
             this.label1.TabIndex = 1;
-            this.label1.Text = "How Many Fish Can You Get?";
+            this.label1.Text = "Lets Go Fishing";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(731, 144);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "See how many fish you can catch.\r\nTo win the game you need to get a score 400 poi" +
-    "nts.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelIntro
             // 
             this.panelIntro.Controls.Add(this.btnPlayGame);
             this.panelIntro.Controls.Add(this.label1);
-            this.panelIntro.Controls.Add(this.label2);
             this.panelIntro.Location = new System.Drawing.Point(12, 12);
             this.panelIntro.Name = "panelIntro";
             this.panelIntro.Size = new System.Drawing.Size(731, 425);
@@ -125,7 +114,8 @@
             this.panelGame.Controls.Add(this.btnBait);
             this.panelGame.Controls.Add(this.picBoot);
             this.panelGame.Controls.Add(this.picFish);
-            this.panelGame.Location = new System.Drawing.Point(9, 15);
+            this.panelGame.Controls.Add(this.pictureBox1);
+            this.panelGame.Location = new System.Drawing.Point(12, 12);
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(731, 425);
             this.panelGame.TabIndex = 3;
@@ -138,9 +128,9 @@
             this.btnCast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCast.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCast.ForeColor = System.Drawing.Color.Green;
-            this.btnCast.Location = new System.Drawing.Point(142, 4);
+            this.btnCast.Location = new System.Drawing.Point(6, 216);
             this.btnCast.Name = "btnCast";
-            this.btnCast.Size = new System.Drawing.Size(130, 177);
+            this.btnCast.Size = new System.Drawing.Size(130, 209);
             this.btnCast.TabIndex = 1;
             this.btnCast.Text = "Fish";
             this.btnCast.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -149,23 +139,27 @@
             // 
             // btnBait
             // 
+            this.btnBait.BackColor = System.Drawing.Color.White;
             this.btnBait.BackgroundImage = global::DSED01Project.Properties.Resources.bait;
             this.btnBait.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBait.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBait.ForeColor = System.Drawing.Color.Green;
+            this.btnBait.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBait.Location = new System.Drawing.Point(5, 4);
             this.btnBait.Name = "btnBait";
-            this.btnBait.Size = new System.Drawing.Size(131, 177);
+            this.btnBait.Size = new System.Drawing.Size(131, 209);
             this.btnBait.TabIndex = 1;
             this.btnBait.Text = "Add Bait";
             this.btnBait.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBait.UseVisualStyleBackColor = true;
+            this.btnBait.UseVisualStyleBackColor = false;
             this.btnBait.Click += new System.EventHandler(this.btnBait_Click);
             // 
             // picBoot
             // 
+            this.picBoot.BackColor = System.Drawing.Color.Transparent;
             this.picBoot.BackgroundImage = global::DSED01Project.Properties.Resources.boot;
             this.picBoot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoot.Location = new System.Drawing.Point(573, 243);
+            this.picBoot.Location = new System.Drawing.Point(564, 244);
             this.picBoot.Name = "picBoot";
             this.picBoot.Size = new System.Drawing.Size(158, 179);
             this.picBoot.TabIndex = 0;
@@ -174,14 +168,25 @@
             // 
             // picFish
             // 
+            this.picFish.BackColor = System.Drawing.Color.Transparent;
             this.picFish.BackgroundImage = global::DSED01Project.Properties.Resources.fish;
             this.picFish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picFish.Location = new System.Drawing.Point(409, 243);
+            this.picFish.Location = new System.Drawing.Point(564, 246);
             this.picFish.Name = "picFish";
             this.picFish.Size = new System.Drawing.Size(158, 179);
             this.picFish.TabIndex = 0;
             this.picFish.TabStop = false;
             this.picFish.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DSED01Project.Properties.Resources.fishing;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(142, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(589, 421);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -199,6 +204,7 @@
             this.panelGame.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFish)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,7 +215,6 @@
         private System.Windows.Forms.Button btnPlayAgain;
         public System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel panelIntro;
         private System.Windows.Forms.Button btnPlayGame;
         private System.Windows.Forms.PictureBox picBoot;
@@ -217,6 +222,7 @@
         private System.Windows.Forms.Button btnCast;
         private System.Windows.Forms.Button btnBait;
         protected System.Windows.Forms.Panel panelGame;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
