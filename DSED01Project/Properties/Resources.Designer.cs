@@ -63,6 +63,16 @@ namespace DSED01Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bait {
+            get {
+                object obj = ResourceManager.GetObject("bait", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boot {
             get {
                 object obj = ResourceManager.GetObject("boot", resourceCulture);
@@ -76,6 +86,16 @@ namespace DSED01Project.Properties {
         internal static System.Drawing.Bitmap fish {
             get {
                 object obj = ResourceManager.GetObject("fish", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fishing_pole {
+            get {
+                object obj = ResourceManager.GetObject("fishing_pole", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

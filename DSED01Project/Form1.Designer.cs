@@ -133,21 +133,31 @@
             // 
             // btnCast
             // 
-            this.btnCast.Location = new System.Drawing.Point(5, 73);
+            this.btnCast.BackColor = System.Drawing.Color.White;
+            this.btnCast.BackgroundImage = global::DSED01Project.Properties.Resources.fishing_pole;
+            this.btnCast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCast.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCast.ForeColor = System.Drawing.Color.Green;
+            this.btnCast.Location = new System.Drawing.Point(142, 4);
             this.btnCast.Name = "btnCast";
-            this.btnCast.Size = new System.Drawing.Size(127, 63);
+            this.btnCast.Size = new System.Drawing.Size(130, 177);
             this.btnCast.TabIndex = 1;
-            this.btnCast.Text = "Cast your line";
-            this.btnCast.UseVisualStyleBackColor = true;
+            this.btnCast.Text = "Fish";
+            this.btnCast.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCast.UseVisualStyleBackColor = false;
             this.btnCast.Click += new System.EventHandler(this.btnCast_Click);
             // 
             // btnBait
             // 
+            this.btnBait.BackgroundImage = global::DSED01Project.Properties.Resources.bait;
+            this.btnBait.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBait.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBait.Location = new System.Drawing.Point(5, 4);
             this.btnBait.Name = "btnBait";
-            this.btnBait.Size = new System.Drawing.Size(127, 63);
+            this.btnBait.Size = new System.Drawing.Size(131, 177);
             this.btnBait.TabIndex = 1;
-            this.btnBait.Text = "Put new bait on your hook";
+            this.btnBait.Text = "Add Bait";
+            this.btnBait.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBait.UseVisualStyleBackColor = true;
             this.btnBait.Click += new System.EventHandler(this.btnBait_Click);
             // 
@@ -202,11 +212,11 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel panelIntro;
         private System.Windows.Forms.Button btnPlayGame;
-        public System.Windows.Forms.Panel panelGame;
         private System.Windows.Forms.PictureBox picBoot;
         private System.Windows.Forms.PictureBox picFish;
         private System.Windows.Forms.Button btnCast;
         private System.Windows.Forms.Button btnBait;
+        protected System.Windows.Forms.Panel panelGame;
     }
 }
 

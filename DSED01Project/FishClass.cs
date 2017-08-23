@@ -19,7 +19,7 @@ namespace DSED01Project
 
         public int Count()
         {
-            return count = 7;
+            return count = 6;
         }
 
         // generate a random number
@@ -35,7 +35,7 @@ namespace DSED01Project
         }
         public int Bait()
         {
-            return newBait = 3;
+            return newBait = 2;
         }
 
         // create countdown to count down from 6 to 1
@@ -45,20 +45,29 @@ namespace DSED01Project
             return count;
         }
 
+        public int debugCountDown()
+        {
+            return count;
+        }
+
 
         public int castNum()
         {
-            //newCast--;
             return newCast;
         }
 
         public int baitNum()
         {
             newBait--;
-            if (newBait == 1)
+            if (newBait == 0)
             {
                 IsBait = false;
             }
+            return newBait;
+        }
+
+        public int debugBaitNum()
+        {
             return newBait;
         }
 

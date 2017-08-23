@@ -25,7 +25,7 @@ namespace DSED01Project
 
         private void Debug()
         {
-            this.Text = myFishClass.baitNum().ToString() + " Bait " + myFishClass.castNum().ToString() + "  Cast " + myFishClass.countDown().ToString() + "  Countdown " + myFishClass.bait();
+            this.Text = myFishClass.debugBaitNum().ToString() + " Bait " + myFishClass.castNum().ToString() + "  Cast " + myFishClass.debugCountDown().ToString() + "  Countdown " + myFishClass.bait();
             //this.Text = dice.ToString() + " Counter " + counter.ToString() + "  Firing " + IsFiringThisTurn + "  Protect jacket " + ProtectJacket;
         }
 
@@ -76,8 +76,9 @@ namespace DSED01Project
         // todo: create a button click code where you can change bait two times only. Use a boolean to say when you cannot change bait any more
         private void btnBait_Click(object sender, EventArgs e)
         {
+            myFishClass.baitNum();
             btnBait.Visible = myFishClass.bait();
-            //Debug();
+            Debug();
 
         }
 
@@ -85,14 +86,18 @@ namespace DSED01Project
         private void btnCast_Click(object sender, EventArgs e)
         {
             //todo: if the countDown equals the castNum AND castNum equals true - you win
-            if (myFishClass.countDown() == myFishClass.castNum())//&& myFishClass.bait() == true
+            if (myFishClass.debugCountDown() == myFishClass.castNum() && myFishClass.bait() == true)
             {
                 MessageBox.Show("You win!");
             }
             //todo: if the count down equals the rnd AND fireaway equals false - you lose
-            else if (myFishClass.countDown() == myFishClass.castNum() && myFishClass.bait() == false)
+            else if (myFishClass.debugCountDown() == myFishClass.castNum() && myFishClass.bait() == false)
             {
                 MessageBox.Show("You lose!");
+            }
+            else
+            {
+                myFishClass.countDown();
             }
             Debug();
         }
