@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -94,6 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fishing.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flowing_water.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reel.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

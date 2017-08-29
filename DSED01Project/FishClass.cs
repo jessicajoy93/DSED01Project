@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DSED01Project
 {
-    class FishClass
+    public class FishClass
     {
         //public TYPE Type { get; set; }
         private static Random random = new Random(DateTime.Now.Millisecond);
-        private int newCast;
+
+        public int newCast;
         private int count;
         private bool IsBait = true;
         private int newBait;
+        public bool fish = false;
+        public bool boot = false;
+
+        SoundPlayer riverSound =
+            new SoundPlayer(
+                @"C:\Users\Jessica Anderson\Dropbox\DSED01Project\DSED01Project\Resources\flowing_water.wav");
 
         public int Count()
         {
@@ -36,6 +44,11 @@ namespace DSED01Project
         public int Bait()
         {
             return newBait = 2;
+        }
+
+        public int Cast(int v)
+        {
+            throw new NotImplementedException();
         }
 
         // create countdown to count down from 6 to 1
@@ -75,6 +88,52 @@ namespace DSED01Project
         {
             return IsBait;
         }
+
+        public void PlayGame()
+        {
+            // if the count down equals the random number AND bait equals true - you win
+            if (debugCountDown() == castNum() && bait() == true)
+            {
+                //picFish.Visible = true;
+                fish = true;
+                MessageBox.Show("You win!");
+                //GameControlsHidden();
+            }
+            // if the count down equals the random number AND bait equals false - you lose
+            else if (debugCountDown() == castNum() && bait() == false)
+            {
+                //picBoot.Visible = true;
+                boot = true;
+                MessageBox.Show("You lose!");
+                //GameControlsHidden();
+            }
+            else
+            {
+                countDown();
+            }
+        }
+
+        public bool fishVisible()
+        {
+            return fish;
+        }
+
+        public bool bootVisible()
+        {
+            return boot;
+        }
+
+
+        // Sounds
+
+        // Stop Sound of River Playing
+        public static void StopSoundRiver()
+        {
+            riverSound.Stop();
+        }
+
+
+
 
     }
 }
