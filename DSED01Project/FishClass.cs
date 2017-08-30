@@ -11,6 +11,7 @@ namespace DSED01Project
 {
     public class FishClass
     {
+        SoundsClass mySoundClass = new SoundsClass();
         //public TYPE Type { get; set; }
         private static Random random = new Random(DateTime.Now.Millisecond);
 
@@ -20,10 +21,6 @@ namespace DSED01Project
         private int newBait;
         public bool fish = false;
         public bool boot = false;
-
-        SoundPlayer riverSound =
-            new SoundPlayer(
-                @"C:\Users\Jessica Anderson\Dropbox\DSED01Project\DSED01Project\Resources\flowing_water.wav");
 
         public int Count()
         {
@@ -41,6 +38,8 @@ namespace DSED01Project
             IsBait = true;
             return IsBait;
         }
+
+        // create a button click code where you can change bait two times only
         public int Bait()
         {
             return newBait = 2;
@@ -69,6 +68,7 @@ namespace DSED01Project
             return newCast;
         }
 
+        // BaitIsTrue, checking to see whether Bait Button has been clicked 2 times. Boolean - either true or false. When True, button still visible. When false, button is hidden.
         public int baitNum()
         {
             newBait--;
@@ -94,46 +94,37 @@ namespace DSED01Project
             // if the count down equals the random number AND bait equals true - you win
             if (debugCountDown() == castNum() && bait() == true)
             {
-                //picFish.Visible = true;
+                SoundsClass.PlayWinSound();
                 fish = true;
-                MessageBox.Show("You win!");
-                //GameControlsHidden();
+                //MessageBox.Show("You win!");
+
             }
             // if the count down equals the random number AND bait equals false - you lose
             else if (debugCountDown() == castNum() && bait() == false)
             {
-                //picBoot.Visible = true;
+                SoundsClass.PlayLoseSound();
                 boot = true;
-                MessageBox.Show("You lose!");
-                //GameControlsHidden();
+                //MessageBox.Show("You lose!");
+
             }
+            // else countsdown by 1
             else
             {
+                SoundsClass.PlayReelSound();
                 countDown();
             }
         }
 
+        // checking if pic of fish is visible
         public bool fishVisible()
         {
             return fish;
         }
 
+        // checking if boot is visible
         public bool bootVisible()
         {
             return boot;
         }
-
-
-        // Sounds
-
-        // Stop Sound of River Playing
-        public static void StopSoundRiver()
-        {
-            riverSound.Stop();
-        }
-
-
-
-
     }
 }

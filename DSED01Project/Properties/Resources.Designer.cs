@@ -111,22 +111,22 @@ namespace DSED01Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] flowing_water {
+        internal static System.Drawing.Bitmap game_over {
             get {
-                object obj = ResourceManager.GetObject("flowing_water", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("game_over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] reel {
+        internal static System.Drawing.Bitmap winner {
             get {
-                object obj = ResourceManager.GetObject("reel", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("winner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -33,25 +33,37 @@
             this.panelIntro = new System.Windows.Forms.Panel();
             this.btnPlayGame = new System.Windows.Forms.Button();
             this.panelGame = new System.Windows.Forms.Panel();
+            this.picGameOver = new System.Windows.Forms.PictureBox();
+            this.picWinner = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.picFish = new System.Windows.Forms.PictureBox();
             this.picBoot = new System.Windows.Forms.PictureBox();
             this.btnCast = new System.Windows.Forms.Button();
             this.btnBait = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.playGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restartGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelIntro.SuspendLayout();
             this.panelGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGameOver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.menuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRestart
@@ -99,6 +111,9 @@
             // panelGame
             // 
             this.panelGame.BackColor = System.Drawing.Color.Transparent;
+            this.panelGame.Controls.Add(this.picGameOver);
+            this.panelGame.Controls.Add(this.picWinner);
+            this.panelGame.Controls.Add(this.panel1);
             this.panelGame.Controls.Add(this.btnRestart);
             this.panelGame.Controls.Add(this.picFish);
             this.panelGame.Controls.Add(this.picBoot);
@@ -109,6 +124,35 @@
             this.panelGame.Size = new System.Drawing.Size(802, 627);
             this.panelGame.TabIndex = 3;
             this.panelGame.Visible = false;
+            // 
+            // picGameOver
+            // 
+            this.picGameOver.BackgroundImage = global::DSED01Project.Properties.Resources.game_over;
+            this.picGameOver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picGameOver.Location = new System.Drawing.Point(291, 0);
+            this.picGameOver.Name = "picGameOver";
+            this.picGameOver.Size = new System.Drawing.Size(511, 377);
+            this.picGameOver.TabIndex = 4;
+            this.picGameOver.TabStop = false;
+            this.picGameOver.Visible = false;
+            // 
+            // picWinner
+            // 
+            this.picWinner.BackgroundImage = global::DSED01Project.Properties.Resources.winner;
+            this.picWinner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picWinner.Location = new System.Drawing.Point(291, 0);
+            this.picWinner.Name = "picWinner";
+            this.picWinner.Size = new System.Drawing.Size(508, 377);
+            this.picWinner.TabIndex = 3;
+            this.picWinner.TabStop = false;
+            this.picWinner.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 215);
+            this.panel1.TabIndex = 2;
             // 
             // picFish
             // 
@@ -178,18 +222,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.BackColor = System.Drawing.Color.White;
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(826, 24);
-            this.menuStrip2.TabIndex = 4;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -201,22 +233,29 @@
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.homeToolStripMenuItem.Text = "File";
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem2.Text = "Play Game";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.toolStripMenuItem1.Text = "Restart Game";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(141, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
@@ -231,16 +270,68 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.aboutToolStripMenuItem.Text = "About Game";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
+            // menuStrip1
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem2.Text = "Play Game";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(826, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playGameToolStripMenuItem,
+            this.restartGameToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            this.aboutToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem2});
+            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
+            this.aboutToolStripMenuItem1.Text = "Help";
+            // 
+            // aboutToolStripMenuItem2
+            // 
+            this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem2.Text = "About";
+            // 
+            // playGameToolStripMenuItem
+            // 
+            this.playGameToolStripMenuItem.Name = "playGameToolStripMenuItem";
+            this.playGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playGameToolStripMenuItem.Text = "Play Game";
+            // 
+            // restartGameToolStripMenuItem
+            // 
+            this.restartGameToolStripMenuItem.Name = "restartGameToolStripMenuItem";
+            this.restartGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.restartGameToolStripMenuItem.Text = "Restart Game";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // Form1
             // 
@@ -253,16 +344,19 @@
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelIntro);
-            this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelIntro.ResumeLayout(false);
             this.panelGame.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picGameOver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWinner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,7 +373,6 @@
         private System.Windows.Forms.Button btnBait;
         protected System.Windows.Forms.Panel panelGame;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -287,6 +380,17 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox picWinner;
+        private System.Windows.Forms.PictureBox picGameOver;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem playGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restartGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem2;
     }
 }
 

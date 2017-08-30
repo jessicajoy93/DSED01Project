@@ -17,14 +17,19 @@ namespace DSED01Project
     /// </summary>
     public partial class Form1 : Form
     {
+        // my classes
+        #region Classes
         FishClass myFishClass = new FishClass();
         MenuClass myMenuClass = new MenuClass();
+        SoundsClass mySoundClass = new SoundsClass();
+        #endregion
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        // Debug
         #region Debug
         private void Debug()
         {
@@ -32,20 +37,17 @@ namespace DSED01Project
         }
         #endregion
 
+        // Restart Game
         #region Restart Game
         private void btnRestart_Click(object sender, EventArgs e)
         {
             RestartGameVisible();
-            StopSoundRiver();
+            SoundsClass.StopRiverSound();
+            SoundsClass.StopReelSound();
+            SoundsClass.StopWinSound();
+            SoundsClass.StopLoseSound();
         }
 
-        //private static void StopSoundRiver()
-        //{
-        //    SoundPlayer simpleSound =
-        //                    new SoundPlayer(
-        //                        @"C:\Users\Jessica Anderson\Dropbox\DSED01Project\DSED01Project\Resources\flowing_water.wav");
-        //    simpleSound.Stop();
-        //}
 
         private void RestartGameVisible()
         {
@@ -61,9 +63,13 @@ namespace DSED01Project
             myFishClass.boot = false;
             picFish.Visible = false;
             picBoot.Visible = false;
+            picWinner.Visible = false;
+            picGameOver.Visible = false;
+
         }
         #endregion
 
+        // Play Game
         #region Play Game
 
         private void btnPlayGame_Click(object sender, EventArgs e)
@@ -72,29 +78,8 @@ namespace DSED01Project
             PlayGame();
             Debug();
 
-            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Jessica Anderson\Dropbox\DSED01Project\DSED01Project\Resources\flowing_water.wav");
-            simpleSound.Play();
-
-            //OpenFileDialog dialog = new OpenFileDialog();
-            //dialog.Filter = "Audio Files (.wav)|*.wav";
-
-            //if (dialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    string path = dialog.FileName;
-            //    PlaySound(path);
-            //}
-
-
+            SoundsClass.PlayRiverSound();
         }
-
-        //private void PlaySound(string path)
-        //{
-        //    System.Media.SoundPlayer player =
-        //        new System.Media.SoundPlayer();
-        //    player.SoundLocation = path;
-        //    player.Load();
-        //    player.Play();
-        //}
 
         private void PlayGame()
         {
@@ -114,7 +99,6 @@ namespace DSED01Project
         }
         #endregion
 
-        // todo: create a button click code where you can change bait two times only. Use a boolean to say when you cannot change bait any more
         private void btnBait_Click(object sender, EventArgs e)
         {
             myFishClass.baitNum();
@@ -126,44 +110,17 @@ namespace DSED01Project
         // create a button click to count down the casts left
         private void btnCast_Click(object sender, EventArgs e)
         {
-            //todo: if the countDown equals the castNum AND castNum equals true - you win
             myFishClass.PlayGame();
             picFish.Visible = myFishClass.fishVisible();
+            picWinner.Visible = myFishClass.fishVisible();
             picBoot.Visible = myFishClass.bootVisible();
-            //PlayGame();
-            //GameControlsHidden();
+            picGameOver.Visible = myFishClass.bootVisible();
+
             Debug();
         }
 
-        //private void PlayGame()
-        //{
-        //    //if (myFishClass.debugCountDown() == myFishClass.castNum() && myFishClass.bait() == true)
-        //    //{
-        //    //    picFish.Visible = true;
-        //    //    MessageBox.Show("You win!");
-        //    //    GameControlsHidden();
-        //    //}
-        //    ////todo: if the count down equals the rnd AND fireaway equals false - you lose
-        //    //else if (myFishClass.debugCountDown() == myFishClass.castNum() && myFishClass.bait() == false)
-        //    //{
-        //    //    picBoot.Visible = true;
-        //    //    MessageBox.Show("You lose!");
-
-        //    //}
-        //    //else
-        //    //{
-        //    //    myFishClass.countDown();
-        //    //}
-        //}
-
-        private void GameControlsHidden()
-        {
-            btnBait.Visible = false;
-            btnCast.Visible = false;
-        }
-
-
         // Menu Items
+        #region Menu
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // exit button
@@ -185,5 +142,7 @@ namespace DSED01Project
         {
             PlayGameVisible();
         }
+        #endregion
+
     }
 }
