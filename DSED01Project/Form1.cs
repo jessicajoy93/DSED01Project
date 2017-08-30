@@ -41,13 +41,22 @@ namespace DSED01Project
         #region Restart Game
         private void btnRestart_Click(object sender, EventArgs e)
         {
+            RestartGame();
+        }
+
+        private void RestartGame()
+        {
             RestartGameVisible();
+            RestartSounds();
+        }
+
+        private static void RestartSounds()
+        {
             SoundsClass.StopRiverSound();
             SoundsClass.StopReelSound();
             SoundsClass.StopWinSound();
             SoundsClass.StopLoseSound();
         }
-
 
         private void RestartGameVisible()
         {
@@ -73,6 +82,11 @@ namespace DSED01Project
         #region Play Game
 
         private void btnPlayGame_Click(object sender, EventArgs e)
+        {
+            GameStart();
+        }
+
+        private void GameStart()
         {
             PlayGameVisible();
             PlayGame();
@@ -121,28 +135,28 @@ namespace DSED01Project
 
         // Menu Items
         #region Menu
-        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+
+        private void playGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GameStart();
+        }
+
+        private void restartGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RestartGame();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // exit button
             myMenuClass.menuExit();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            RestartGameVisible();
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             // about game button
             myMenuClass.menuAbout();
         }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            PlayGameVisible();
-        }
         #endregion
-
     }
 }
