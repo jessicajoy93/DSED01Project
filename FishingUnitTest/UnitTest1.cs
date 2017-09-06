@@ -15,7 +15,7 @@ namespace FishingUnitTest
         [TestMethod]
         public void RandomNumberTest()
         {
-            Random random = new Random(DateTime.Now.Millisecond);
+            //  Random random = new Random(DateTime.Now.Millisecond);
             FishClass myFishClass = new FishClass();
 
             //myFishClass.newCast = ;
@@ -27,7 +27,7 @@ namespace FishingUnitTest
         [TestMethod]
         public void CountTest()
         {
-            Random random = new Random(DateTime.Now.Millisecond);
+            //  Random random = new Random(DateTime.Now.Millisecond);
             FishClass myFishClass = new FishClass();
 
             //myFishClass.newCast = ;
