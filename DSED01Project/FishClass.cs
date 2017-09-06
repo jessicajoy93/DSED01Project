@@ -12,15 +12,15 @@ namespace DSED01Project
     public class FishClass
     {
         SoundsClass mySoundClass = new SoundsClass();
-        //public TYPE Type { get; set; }
+
         private static Random random = new Random(DateTime.Now.Millisecond);
 
         public int newCast;
         private int count;
         private bool IsBait = true;
         private int newBait;
-        public bool fish = false;
-        public bool boot = false;
+        private bool fish;
+        private bool boot;
 
         public int Count()
         {
@@ -91,20 +91,21 @@ namespace DSED01Project
 
         public void PlayGame()
         {
-            // if the count down equals the random number AND bait equals true - you win
-            if (debugCountDown() == castNum() && bait() == true)
-            {
-                SoundsClass.PlayWinSound();
-                fish = true;
-                //MessageBox.Show("You win!");
-
-            }
-            // if the count down equals the random number AND bait equals false - you lose
-            else if (debugCountDown() == castNum() && bait() == false)
+            // if the count down equals the random number AND bait equals true - you lose
+            if (debugCountDown() == castNum() && bait() == false)
             {
                 SoundsClass.PlayLoseSound();
                 boot = true;
                 //MessageBox.Show("You lose!");
+
+            }
+            // if the count down equals the random number AND bait equals false - you win
+            else if ((debugCountDown() == castNum() && bait() == true))
+            {
+
+                SoundsClass.PlayWinSound();
+                fish = true;
+                //MessageBox.Show("You win!");
 
             }
             // else countsdown by 1
@@ -116,12 +117,22 @@ namespace DSED01Project
         }
 
         // checking if pic of fish is visible
+        public bool Fish()
+        {
+            return fish = false;
+        }
+
         public bool fishVisible()
         {
             return fish;
         }
 
         // checking if boot is visible
+        public bool Boot()
+        {
+            return boot = false;
+        }
+
         public bool bootVisible()
         {
             return boot;

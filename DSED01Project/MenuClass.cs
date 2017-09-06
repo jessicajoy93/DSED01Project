@@ -19,7 +19,7 @@ namespace DSED01Project
 
         public void menuAbout()
         {
-            MessageBox.Show("This is where instructions will show");
+            MessageBox.Show("Can you catch the fish? \n You have 2 chances to put new bait on your hook, if you run out of bait you will end up catching a boot.");
         }
 
     }

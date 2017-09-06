@@ -35,7 +35,6 @@
             this.panelGame = new System.Windows.Forms.Panel();
             this.picGameOver = new System.Windows.Forms.PictureBox();
             this.picWinner = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.picFish = new System.Windows.Forms.PictureBox();
             this.picBoot = new System.Windows.Forms.PictureBox();
             this.btnCast = new System.Windows.Forms.Button();
@@ -56,6 +55,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelIntro.SuspendLayout();
             this.panelGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGameOver)).BeginInit();
@@ -111,9 +111,9 @@
             // panelGame
             // 
             this.panelGame.BackColor = System.Drawing.Color.Transparent;
+            this.panelGame.Controls.Add(this.label2);
             this.panelGame.Controls.Add(this.picGameOver);
             this.panelGame.Controls.Add(this.picWinner);
-            this.panelGame.Controls.Add(this.panel1);
             this.panelGame.Controls.Add(this.btnRestart);
             this.panelGame.Controls.Add(this.picFish);
             this.panelGame.Controls.Add(this.picBoot);
@@ -146,13 +146,6 @@
             this.picWinner.TabIndex = 3;
             this.picWinner.TabStop = false;
             this.picWinner.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 215);
-            this.panel1.TabIndex = 2;
             // 
             // picFish
             // 
@@ -295,26 +288,26 @@
             // playGameToolStripMenuItem
             // 
             this.playGameToolStripMenuItem.Name = "playGameToolStripMenuItem";
-            this.playGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playGameToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.playGameToolStripMenuItem.Text = "Play Game";
             this.playGameToolStripMenuItem.Click += new System.EventHandler(this.playGameToolStripMenuItem_Click);
             // 
             // restartGameToolStripMenuItem
             // 
             this.restartGameToolStripMenuItem.Name = "restartGameToolStripMenuItem";
-            this.restartGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.restartGameToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.restartGameToolStripMenuItem.Text = "Restart Game";
             this.restartGameToolStripMenuItem.Click += new System.EventHandler(this.restartGameToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(141, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -332,6 +325,16 @@
             this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem2.Text = "About";
             this.aboutToolStripMenuItem2.Click += new System.EventHandler(this.aboutToolStripMenuItem2_Click);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(282, 141);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Can you catch the fish?\r\nYou have 2 chances to put new bait on your hook, if you " +
+    "run out of bait you will end up catching a boot.";
             // 
             // Form1
             // 
@@ -380,7 +383,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picWinner;
         private System.Windows.Forms.PictureBox picGameOver;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -391,6 +393,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem2;
+        private System.Windows.Forms.Label label2;
     }
 }
 

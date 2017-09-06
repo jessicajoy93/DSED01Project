@@ -68,8 +68,8 @@ namespace DSED01Project
             btnBait.Visible = true;
             myFishClass.Count();
             myFishClass.Cast();
-            myFishClass.fish = false;
-            myFishClass.boot = false;
+            myFishClass.Fish();
+            myFishClass.Boot();
             picFish.Visible = false;
             picBoot.Visible = false;
             picWinner.Visible = false;
@@ -124,9 +124,14 @@ namespace DSED01Project
         // create a button click to count down the casts left
         private void btnCast_Click(object sender, EventArgs e)
         {
+            // plays game
             myFishClass.PlayGame();
+
+            // displays fish and winner pictures is fishVisible == true
             picFish.Visible = myFishClass.fishVisible();
             picWinner.Visible = myFishClass.fishVisible();
+
+            // displays boot and game over pictures is bootVisible == true
             picBoot.Visible = myFishClass.bootVisible();
             picGameOver.Visible = myFishClass.bootVisible();
 
