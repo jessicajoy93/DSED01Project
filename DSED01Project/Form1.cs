@@ -97,6 +97,7 @@ namespace DSED01Project
 
         private void PlayGame()
         {
+            // play game
             myFishClass.Count();
             myFishClass.Cast();
             myFishClass.Bait();
@@ -105,6 +106,7 @@ namespace DSED01Project
 
         private void PlayGameVisible()
         {
+            // hide or show items
             panelIntro.Visible = false;
             panelGame.Visible = true;
             btnRestart.Visible = true;
